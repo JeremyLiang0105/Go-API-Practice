@@ -1,6 +1,6 @@
 package main
 
-// build a library API that we can store a bunch of books
+// build a library API that we can store a bunch of books.
 import (
 	"net/http"
 
@@ -102,10 +102,10 @@ func createBook(c *gin.Context) {
 
 func main() {
 	router := gin.Default()
-	router.GET("/books", getBooks)
+	router.GET("/books", getBooks) // GET: get information
 	router.GET("/books/:id", bookById)
-	router.POST("/books", createBook)
+	router.POST("/books", createBook) // POST: add information or create something new
 	router.PATCH("/checkout", checkoutBook)
-	router.PATCH("/return", returnBook)
+	router.PATCH("/return", returnBook) // PATCH: update information
 	router.Run("localhost:8080")
 }
